@@ -1,10 +1,10 @@
 default[:siebel][:distr][:archive] = "/oracle/t/sbl_archive"
 default[:siebel][:distr][:folder] = "/oracle/t"
 default[:siebel][:distr][:files][:ent] = {
-  "Disk1.zip" => "https://www.dropbox.com/s/mq6ysk9f8hhmns3"
+  "Disk1.zip" => "<some uri>"
 }
 default[:siebel][:distr][:files][:swes] = {
-  "Disk1.zip" => "https://www.dropbox.com/s/tjomd7d7q39h4oa"
+  "Disk1.zip" => "<some uri>"
 }
 
 
