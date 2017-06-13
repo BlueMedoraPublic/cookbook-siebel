@@ -1,15 +1,15 @@
 RESPONSEFILE_VERSION=2.2.1.0.0
 
-s_shiphomeLocation="<%= node[:siebelcrm][:distr][:folder] %>/swes/Disk1"
+s_shiphomeLocation="<%= node[:siebel][:distr][:folder] %>/swes/Disk1"
 
-FROM_LOCATION="<%= node[:siebelcrm][:distr][:folder] %>/swes/Disk1/stage/products.xml"
+FROM_LOCATION="<%= node[:siebel][:distr][:folder] %>/swes/Disk1/stage/products.xml"
 
 s_topLevelComp="oracle.siebel.eappweb"
 s_SiebelVersion="15.0.0.0.0"
 s_installType="New Installation"
 
-ORACLE_HOME="<%= node[:siebelcrm][:swes_home][:location] %>"
-ORACLE_HOME_NAME="<%= node[:siebelcrm][:swes_home][:name] %>"
+ORACLE_HOME="<%= node[:siebel][:swes_home][:location] %>"
+ORACLE_HOME_NAME="<%= node[:siebel][:swes_home][:name] %>"
 
 b_isGatewayInstalled="false"
 b_isSiebsrvrInstalled="false"
@@ -25,4 +25,4 @@ DEINSTALL_LIST={"oracle.siebel.eappweb","15.0.0.0.0"}
 SHOW_DEINSTALL_CONFIRMATION=true
 SHOW_DEINSTALL_PROGRESS=true
 
-s_txt_seedValue="<%= node[:siebelcrm][:seed] %>"
+s_txt_seedValue="<%= node[:siebel][:seed] %>"

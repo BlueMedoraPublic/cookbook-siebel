@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: siebelcrm
+# Cookbook Name:: siebel
 # Recipe:: default
 #
 # Copyright 2016, YOUR_COMPANY_NAME

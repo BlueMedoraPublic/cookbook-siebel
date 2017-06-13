@@ -1,12 +1,12 @@
-ent_install_folder = "#{node[:siebelcrm][:distr][:folder]}/ent/Disk1"
+ent_install_folder = "#{node[:siebel][:distr][:folder]}/ent/Disk1"
 
-unless File.exists?(node[:siebelcrm][:ses_home][:location])
+unless File.exists?(node[:siebel][:ses_home][:location])
   unless File.exists?(ent_install_folder) 
-    include_recipe 'siebelcrm::prepare_distrib_for_ent' 
+    include_recipe 'siebel::prepare_distrib_for_ent' 
   end
 
   # Creating SIEBEL_HOME 
-  directory "#{node[:siebelcrm][:ses_home][:location]}" do
+  directory "#{node[:siebel][:ses_home][:location]}" do
     recursive true
     owner "oracle"
     group "oinstall"

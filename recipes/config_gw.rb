@@ -10,10 +10,10 @@ end
 bash 'create_gateway_server' do
   user "oracle"
   group "oinstall"
-  cwd "#{node[:siebelcrm][:ses_home][:location]}/config"
+  cwd "#{node[:siebel][:ses_home][:location]}/config"
   code <<-EOH
-    chmod 770 #{node[:siebelcrm][:ses_home][:location]}/gtwsrvr/cfgenv.sh
-    source #{node[:siebelcrm][:ses_home][:location]}/gtwsrvr/cfgenv.sh
+    chmod 770 #{node[:siebel][:ses_home][:location]}/gtwsrvr/cfgenv.sh
+    source #{node[:siebel][:ses_home][:location]}/gtwsrvr/cfgenv.sh
     
     export LD_LIBRARY_PATH=/oracle/Siebel/15.0.0.0/ses/siebsrvr/lib:$LD_LIBRARY_PATH
     export LD_LIBRARY_PATH=/oracle/Siebel/15.0.0.0/ses/gtwsrvr/lib:$LD_LIBRARY_PATH

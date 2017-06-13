@@ -1,5 +1,5 @@
-arch_folder = node[:siebelcrm][:distr][:archive]
-distr_folder = node[:siebelcrm][:distr][:folder]
+arch_folder = node[:siebel][:distr][:archive]
+distr_folder = node[:siebel][:distr][:folder]
 
 # Creating Enterprise Install Folder
 directory "#{distr_folder}/ent" do
@@ -20,7 +20,7 @@ directory "#{arch_folder}" do
 end
 
 # Prepare Distrib Files
-node[:siebelcrm][:distr][:files][:ent].each do |file, url|
+node[:siebel][:distr][:files][:ent].each do |file, url|
   # Fetch zips with Distribs
   execute "fetch_ent_file_#{file}" do
     command "curl -L -o enterprise_#{file} #{url}/#{file}?dl=1"
