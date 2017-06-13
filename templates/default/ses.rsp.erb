@@ -1,0 +1,26 @@
+RESPONSEFILE_VERSION=2.2.1.0.0
+
+s_shiphomeLocation="<%= node[:siebelcrm][:distr][:folder] %>/ent/Disk1"
+
+FROM_LOCATION="<%= node[:siebelcrm][:distr][:folder] %>/ent/Disk1/stage/products.xml"
+
+s_topLevelComp="oracle.siebel.ses"
+s_SiebelVersion="15.0.0.0.0"
+s_installType="New Installation"
+
+ORACLE_HOME="<%= node[:siebelcrm][:ses_home][:location] %>"
+ORACLE_HOME_NAME="<%= node[:siebelcrm][:ses_home][:name] %>"
+
+b_isGatewayInstalled="<%= node[:siebelcrm][:server_modules][:siebel_gateway] ? "true" : "false" %>"
+b_isSiebsrvrInstalled="<%= node[:siebelcrm][:server_modules][:siebel_server] ? "true" : "false" %>"
+b_isDBInstalled="<%= node[:siebelcrm][:server_modules][:siebel_database_util] ? "true" : "false" %>"
+
+b_isEAIInstalled="false"
+b_isLDAPInstalled="false"
+
+selectedLangs="[English, Russian]"
+
+DEINSTALL_LIST={"oracle.siebel.ses","15.0.0.0.0"}
+
+SHOW_DEINSTALL_CONFIRMATION=true
+SHOW_DEINSTALL_PROGRESS=truea

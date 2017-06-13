@@ -1,0 +1,54 @@
+
+AutostartCmdLineParam=yes
+ConfigMode=VERT
+ConfigTask=ConfigureGateway
+current_section=
+current_step=PrimaryLanguage
+DoubleQuote="
+EnterpriseCreateDefault=SBA_82
+EnterpriseServer=default
+EnterpriseUseDefault=SBA_82
+first_section=InitialSetup
+first_step=MainTask
+Gateway=<%= node[:hostname]%>,/oracle/Siebel/15.0.0.0/ses/gtwysrvr/admin/siebns.dat
+GatewayAddress=<%= node[:hostname]%>:2320
+GtwyVersionString=15.0.0.0SIA[23048]ENU
+HostName=<%= node[:hostname]%>
+MainTask=Create
+MSSQL_DRIVER_NAME=SQL Server Native Client 11.0
+NameserverHostName=<%= node[:hostname]%>
+NamesrvrAutostart=true
+NamesrvrPortPick=2320
+NamesrvrStartnow=true
+OperatingSystem=linux
+OSDirSeparator=/
+OSType=i386
+PrimaryLanguage=enu
+RequestComponent=SRMSynch
+RequestServer=<%= node[:hostname]%>
+SiebelBinDir=/oracle/Siebel/15.0.0.0/ses/gtwysrvr/bin
+SiebelDbsrvrRoot=/oracle/Siebel/15.0.0.0/ses/dbsrvr
+SiebelEncryption=
+SiebelEnterprise=default
+SiebelGateway=<%= node[:hostname]%>:2320
+SiebelGatewayCfg=/oracle/Siebel/15.0.0.0/ses/gtwysrvr/admin/siebns.dat::NSFILE:
+SiebeLibDir=/oracle/Siebel/15.0.0.0/ses/gtwysrvr/lib
+SiebelInstalledDir=/oracle/Siebel/15.0.0.0/ses/gtwysrvr
+SiebelLanguage=ENU
+SiebelLogArch=
+SiebelLogDir=
+SiebelLogEvents=
+SiebelLogFile=
+SiebelMaxThreads=
+SiebelMsgDir=/oracle/Siebel/15.0.0.0/ses/gtwysrvr/locale/enu
+SiebelPassword=
+SiebelProgName=
+SiebelRoot=/oracle/Siebel/15.0.0.0/ses/gtwysrvr
+SiebelRootParm=-r /oracle/Siebel/15.0.0.0/ses/gtwysrvr
+SiebelTableOwner=
+SiebelTempDir=/oracle/Siebel/15.0.0.0/ses/gtwysrvr/temp
+SiebelUser=
+SiebelVersion=15.0.0.0SIA[23048]ENU
+TraceLevel=1
+UnicodeEnable=
+Vertical_Extension=_sia
