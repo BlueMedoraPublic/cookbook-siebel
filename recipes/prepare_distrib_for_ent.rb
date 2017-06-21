@@ -1,24 +1,3 @@
-arch_folder = node[:siebel][:distr][:archive]
-distr_folder = node[:siebel][:distr][:folder]
-
-# Creating Enterprise Install Folder
-directory "#{distr_folder}/ent" do
-  recursive true
-  owner "oracle"
-  group "oinstall"
-  mode "0755"
-  action :create
-end
-
-# Creating Archive Folder
-directory "#{arch_folder}" do
-  recursive true
-  owner "oracle"
-  group "oinstall"
-  mode "0755"
-  action :create
-end
-
 # Prepare Distrib Files
 node[:siebel][:distr][:files][:ent].each do |file, url|
   # Fetch zips with Distribs
@@ -26,20 +5,20 @@ node[:siebel][:distr][:files][:ent].each do |file, url|
     command "curl -L -o enterprise_#{file} #{url}/#{file}?dl=1"
     user "oracle"
     group "oinstall"
-    cwd arch_folder
-    not_if { ::File.exists?("#{arch_folder}/#{file}") }
+    cwd node[:siebel][:distr][:archive]
+    not_if { ::File.exists?("#{node[:siebel][:distr][:archive]}/#{file}") }
   end
 
   # Unzip distribs
   execute "unzip_ent_#{file}" do
-    command "unzip #{arch_folder}/enterprise_#{file}"
+    command "unzip #{node[:siebel][:distr][:archive]}/enterprise_#{file}"
     user "oracle"
     group "oinstall"
-    cwd "#{distr_folder}/ent"
+    cwd "#{node[:siebel][:distr][:folder]}/ent"
   end
 
   execute "change_mode_for_installer" do
     command "sudo chmod 755 .oui runInstaller lsnodes resource unzip *.sh"
-    cwd "#{distr_folder}/ent/Disk1/install"
+    cwd "#{node[:siebel][:distr][:folder]}/ent/Disk1/install"
   end
 end

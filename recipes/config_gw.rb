@@ -15,8 +15,8 @@ bash 'create_gateway_server' do
     chmod 770 #{node[:siebel][:ses_home][:location]}/gtwsrvr/cfgenv.sh
     source #{node[:siebel][:ses_home][:location]}/gtwsrvr/cfgenv.sh
     
-    export LD_LIBRARY_PATH=/oracle/Siebel/15.0.0.0/ses/siebsrvr/lib:$LD_LIBRARY_PATH
-    export LD_LIBRARY_PATH=/oracle/Siebel/15.0.0.0/ses/gtwsrvr/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=#{node[:siebel][:ses_home][:location]}/siebsrvr/lib:$LD_LIBRARY_PATH
+    export LD_LIBRARY_PATH=#{node[:siebel][:ses_home][:location]}/ses/gtwsrvr/lib:$LD_LIBRARY_PATH
     export LD_LIBRARY_PATH=/oracle/app/oracle/product/11.2.0/client/lib:$LD_LIBRARY_PATH
     export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH
 
