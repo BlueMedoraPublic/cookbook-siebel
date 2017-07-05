@@ -1,12 +1,12 @@
-default[:siebel][:distr][:archive] = "/oracle/t/sbl_archive"
 default[:siebel][:distr][:folder] = "/oracle/t"
+default[:siebel][:distr][:archive] = "#{node[:siebel][:distr][:folder]}/sbl_archive"
+
 default[:siebel][:distr][:files][:ent] = {
   "Disk1.zip" => "<some uri>"
 }
 default[:siebel][:distr][:files][:swes] = {
   "Disk1.zip" => "<some uri>"
 }
-
 
 default[:siebel][:server_modules] = {
   siebel_server: true,
@@ -15,11 +15,13 @@ default[:siebel][:server_modules] = {
   siebel_web_ext: true
 }
 
+default[:siebel][:version] = '16.0.0.0'
+
 default[:siebel][:ses_home][:name] = "SES_HOME"
-default[:siebel][:ses_home][:location] = "/oracle/Siebel/15.0.0.0/ses"
+default[:siebel][:ses_home][:location] = "/oracle/Siebel/#{node[:siebel][:version]}/ses"
 
 default[:siebel][:swes_home][:name] = "EAPPWEB_HOME"
-default[:siebel][:swes_home][:location] = "/oracle/Siebel/15.0.0.0/eappweb"
+default[:siebel][:swes_home][:location] = "/oracle/Siebel/#{node[:siebel][:version]}/eappweb"
 default[:siebel][:seed] = "12345678"
 
 default[:siebel][:gtwsrvr][:port] = "2320"
